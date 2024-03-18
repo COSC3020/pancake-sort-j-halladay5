@@ -1,4 +1,4 @@
-function pancakesort(array)
+function pancakeSort(array)
 {
     var flipPos;
     
