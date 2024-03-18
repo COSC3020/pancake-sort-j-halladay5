@@ -30,3 +30,11 @@ What is the asymptotic runtime ($\Theta$) of your algorithm in terms of the
 number of comparisons? What is it in terms of the number of flips? Add your
 answer to this markdown file.
 
+In terms of number of comparisons, pancakeSort compares the elements of the array to each other at least once. Each element will be compared to the first element once, so we have n (number of elements) times. 
+When a term needs to be flipped forward and it's value is between those of the first and last of the "sorted stack" of the array, it will be flipped and be compared to each element until it finds an
+element smaller than itself. In the worst case, the number of elements compared will be n-1, where it is the 2nd greatest element of the list and will be compared to all of the elements that come before it.
+In the average case, the element will be greater than 1/2 of the sorted elements so it would be n/2. Either way, this part will simplify to n. So the for loop making n comparisons, and the possible number of 
+comparisons made to find the correct index, the asymptotic runtime is $\Theta(n^2)$. 
+
+In terms of the number of flips, the algorithm may make no flips, or it may make many. In the worst case, the algorithm will make 1, 2, or 4 flips for each element. 
+So the asymptotic runtime for flips would be $\ n, 2n, or 4n $. In all of these cases, and especially in the worst case of 4n, the time complexity would be $\ 4n \in \Theta(n)$.
