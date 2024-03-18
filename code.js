@@ -1,4 +1,4 @@
-function pancakeSort(array)
+function pancakesort(array)
 {
     var flipPos;
     
@@ -10,10 +10,18 @@ function pancakeSort(array)
     for(var i = 1; i < array.length; i++)
     {
         flipPos = 0;
-        if(array[i] < array[0])
+        if(array[i] <= array[0])
         {
-            flip(array, i);
-            flip(array, i+1);
+            if(i == 1)
+            {
+                flip(array, i+1)
+            }
+            
+            if(i > 1)
+            {
+                flip(array, i);
+                flip(array, i+1);
+            }
         }
         
        if((array[i] > array[0]) && (array[i] < array[i-1]))
@@ -43,4 +51,3 @@ function flip(array, n)
     
     return array;
 }
-
